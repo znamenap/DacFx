@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.12-preview" />
+  <PropertyGroup>
+    <Name>SampleDatabase</Name>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <OutputPath>../output/netstandard2.0</OutputPath>
+    <DeploymentContributors Condition=" '$(WithoutInputs)' == '' ">$(DeploymentContributors);SampleDeploymentContributor.SampleDeploymentContributor</DeploymentContributors>
+    <!-- <DeployToDatabase Condition=" '$(WithoutInputs)' == '' ">True</DeployToDatabase> -->
+  </PropertyGroup>
+</Project>
