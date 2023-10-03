@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.12-preview" />
+  <PropertyGroup>
+    <Name>SampleDatabase</Name>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <OutputPath>../output/netstandard2.0</OutputPath>
+    <!-- Pending fixes from #341
+    <DeploymentContributors>DbSchema.Version.Contributors.DeployStaticData</DeploymentContributors>
+    -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DeploymentExtensionConfiguration Include="seeding.data.sql" />
+
+    <!-- Next line should not be required by default -->
+    <!-- <Build Remove="@(DeploymentExtensionConfiguration)" /> -->
+  </ItemGroup>
+</Project>
